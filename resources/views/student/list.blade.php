@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head><title>Students</title></head>
+<head>
+    <title>Students</title>
+</head>
 <body>
     <h1>Students</h1>
 
@@ -8,7 +10,8 @@
         <p style="color: green;">{{ session('success') }}</p>
     @endif
 
-    <a href="/students/create">Create Student</a>
+    <a href="/students/create">Create Student</a> | 
+    <a href="/courses">Go to Courses</a>
     <br><br>
 
     <table border="1" cellpadding="10">
@@ -39,7 +42,9 @@
                     </td>
                 </tr>
             @empty
-                <tr><td colspan="5">No students found.</td></tr>
+                <tr>
+                    <td colspan="5">No students found.</td>
+                </tr>
             @endforelse
         </tbody>
     </table>
