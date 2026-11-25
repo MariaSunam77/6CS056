@@ -5,6 +5,6 @@
         @method('PUT')
         <x-students.form :student="$student" />
         <button type="submit" class="btn">Update Student</button>
-        <a href="{{ route('students.show', $student) }}">Cancel</a>
+        <a href="{{ route('students.show', $student) }}" class="btn">Cancel</a>
     </form>
 </x-layouts.app>

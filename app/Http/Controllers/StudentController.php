@@ -57,17 +57,24 @@ class StudentController extends Controller
             ->with('success', 'Student deleted successfully!');
     }
 
-    private function rules(?Student $student = null): array
-    {
-        return [
-            'name'          => 'required|string|max:255',
-            'email'         => [
-                'required', 'email', 'max:255',
-                Rule::unique('students')->ignore($student?->id),
-            ],
-            'phone'         => 'required|string|max:20',
-            'address'       => 'nullable|string|max:500',
-            'date_of_birth' => 'nullable|date',
-        ];
-    }
+
+private function rules(?Student $student = null): array
+{
+    return [
+        'name' => 'required|string|max:255|regex:/^[\pL\s\'-]+$/u',
+
+        'email' => [
+            'required',
+            'email',
+            'max:255',
+            Rule::unique('students')->ignore($student?->id),
+        ],
+
+       'phone' => 'required|regex:/^[0-9]{10}$/',
+
+        'address' => 'nullable|string|max:500',
+
+        'date_of_birth' => 'nullable|date|before:today',
+    ];
+  }
 }

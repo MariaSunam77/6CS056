@@ -8,5 +8,5 @@
     <p><strong>Date of Birth:</strong> {{ $student->date_of_birth?->format('d M Y') }}</p>
     <p><strong>Age:</strong> {{ $student->age ?? 'Not available' }}</p>
     <a href="{{ route('students.edit', $student) }}" class="btn">Edit Student</a>
-    <a href="{{ route('students.index') }}">Back to Students</a>
+    <a href="{{ route('students.index') }}" class="btn">Back to Students</a>
 </x-layouts.app>

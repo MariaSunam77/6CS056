@@ -8,5 +8,5 @@
     <p><strong>Difficulty:</strong> {{ $course->difficulty }}</p>
     <p><strong>Active:</strong> {{ $course->is_active ? 'Yes' : 'No' }}</p>
     <a href="{{ route('courses.edit', $course) }}" class="btn">Edit Course</a>
-    <a href="{{ route('courses.index') }}">Back to Courses</a>
+    <a href="{{ route('courses.index') }}" class="btn">Back to Courses</a>
 </x-layouts.app>
